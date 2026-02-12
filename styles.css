@@ -116,6 +116,11 @@ button {
     font-weight: 700;
     transition: var(--transition);
 }
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
 
 .logo:hover {
     color: var(--cyan);
@@ -124,7 +129,9 @@ button {
 .logo-icon {
     font-size: 1.8rem;
 }
-
+.navbar.scrolled .logo-image {
+    height: 35px;
+}
 .nav-menu {
     display: flex;
     align-items: center;
