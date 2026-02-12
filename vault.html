@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault - Qurious Tech</title>
+    <meta name="description" content="Technical Resources, Articles & Video Library">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span>Qurious Tech</span>
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="embedded.html" class="nav-link">Embedded</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="vault.html" class="nav-link active">Vault</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="btn-primary nav-cta">Work With Us</a>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-small">
+        <div class="container">
+            <div class="hero-content reveal">
+                <h1 class="hero-title">
+                    The <span class="gradient-text">Vault</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Technical resources, engineering insights, and project breakdowns.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="section search-section">
+        <div class="container">
+            <div class="search-bar reveal">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search articles, videos, topics..." id="vaultSearch">
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Tabs -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="category-tabs reveal">
+                <button class="category-tab active" data-category="all">All</button>
+                <button class="category-tab" data-category="embodied-ai">Embodied AI</button>
+                <button class="category-tab" data-category="robotics">Robotics</button>
+                <button class="category-tab" data-category="automation">Automation</button>
+                <button class="category-tab" data-category="web-systems">Web Systems</button>
+                <button class="category-tab" data-category="startup-tech">Startup Tech</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Featured Articles</h2>
+            </div>
+            <div class="articles-grid">
+                <article class="article-card reveal" data-category="embodied-ai">
+                    <div class="article-meta">
+                        <span class="article-tag">Embodied AI</span>
+                        <span class="article-date">Feb 2024</span>
+                    </div>
+                    <h3>Building Vision-Language-Action Models for Real Robots</h3>
+                    <p>Deep dive into integrating VLA models with physical robotic systems, covering hardware requirements, model optimization, and real-world deployment challenges.</p>
+                    <a href="#" class="article-link">Read Article →</a>
+                </article>
+
+                <article class="article-card reveal" data-category="robotics">
+                    <div class="article-meta">
+                        <span class="article-tag">Robotics</span>
+                        <span class="article-date">Jan 2024</span>
+                    </div>
+                    <h3>ROS2 Architecture for Production Systems</h3>
+                    <p>Designing reliable ROS2 architectures that handle edge cases, implement proper error recovery, and scale across distributed robotic fleets.</p>
+                    <a href="#" class="article-link">Read Article →</a>
+                </article>
+
+                <article class="article-card reveal" data-category="automation">
+                    <div class="article-meta">
+                        <span class="article-tag">Automation</span>
+                        <span class="article-date">Jan 2024</span>
+                    </div>
+                    <h3>Multi-Agent AI Systems: Design Patterns</h3>
+                    <p>Architecting reliable multi-agent systems with proper orchestration, error handling, and observability for production environments.</p>
+                    <a href="#" class="article-link">Read Article →</a>
+                </article>
+
+                <article class="article-card reveal" data-category="web-systems">
+                    <div class="article-meta">
+                        <span class="article-tag">Web Systems</span>
+                        <span class="article-date">Dec 2023</span>
+                    </div>
+                    <h3>Scaling Backend Systems to 1M Requests</h3>
+                    <p>Technical deep dive into database optimization, caching strategies, and load balancing for high-traffic web applications.</p>
+                    <a href="#" class="article-link">Read Article →</a>
+                </article>
+
+                <article class="article-card reveal" data-category="robotics">
+                    <div class="article-meta">
+                        <span class="article-tag">Robotics</span>
+                        <span class="article-date">Dec 2023</span>
+                    </div>
+                    <h3>Motor Control Fundamentals for Robotics</h3>
+                    <p>Understanding PWM, PID control, and closed-loop systems for precision motor control in robotic applications.</p>
+                    <a href="#" class="article-link">Read Article →</a>
+                </article>
+
+                <article class="article-card reveal" data-category="startup-tech">
+                    <div class="article-meta">
+                        <span class="article-tag">Startup Tech</span>
+                        <span class="article-date">Nov 2023</span>
+                    </div>
+                    <h3>AI Infrastructure Decisions for Early-Stage Startups</h3>
+                    <p>Choosing the right AI infrastructure, model hosting, and MLOps tools when building AI-first products with limited resources.</p>
+                    <a href="#" class="article-link">Read Article →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Library -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Video Library</h2>
+                <p class="section-subtitle">Technical tutorials and project walkthroughs</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Building a Vision-Language-Action Robot</h3>
+                        <p>Complete walkthrough of VLA model integration with robotic hardware.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>ESP32 Advanced Motor Control</h3>
+                        <p>Implementing PID control and PWM optimization for brushless motors.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>ROS2 Navigation Stack Deep Dive</h3>
+                        <p>Setting up autonomous navigation with SLAM and path planning.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>AI Agent Systems Architecture</h3>
+                        <p>Building production-ready multi-agent AI systems with LangChain.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Computer Vision on Edge Devices</h3>
+                        <p>Optimizing YOLO models for real-time inference on embedded hardware.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Sensor Fusion for Robotics</h3>
+                        <p>Combining IMU, LiDAR, and camera data for robust perception.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Building Scalable APIs with Node.js</h3>
+                        <p>Architecture patterns for high-performance backend systems.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Embedded Linux for IoT Devices</h3>
+                        <p>Custom Linux builds and device drivers for embedded applications.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>LLM Fine-Tuning for Domain Tasks</h3>
+                        <p>Training custom language models for specific technical applications.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Robotic Arm Kinematics</h3>
+                        <p>Forward and inverse kinematics for 6-DOF manipulators.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Cloud Infrastructure for AI Startups</h3>
+                        <p>Cost-effective cloud architecture for early-stage AI companies.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+
+                <div class="video-card reveal" data-video-id="dQw4w9WgXcQ">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-overlay">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Real-Time Data Processing Pipelines</h3>
+                        <p>Building streaming data systems with Kafka and event-driven architecture.</p>
+                        <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-text">Watch Now →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta reveal">
+                <a href="https://youtube.com/@waqar_qurious" target="_blank" class="btn-primary">
+                    <i class="fab fa-youtube"></i> Subscribe on YouTube
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span>Qurious Tech</span>
+                    </a>
+                    <p>Building the Physical Brain of the Future.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigate</h4>
+                        <a href="index.html">Home</a>
+                        <a href="embedded.html">Embedded</a>
+                        <a href="services.html">Services</a>
+                        <a href="vault.html">Vault</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="contact.html">Contact</a>
+                        <a href="mailto:hello@qurioustech.com">Email</a>
+                        <a href="https://youtube.com/@waqar_qurious" target="_blank">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Qurious Tech. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://youtube.com/@waqar_qurious" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://instagram.com/qurioustech" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/qurioustech" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/qurioustech" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://x.com/qurioustech" target="_blank" aria-label="X">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating YouTube Button -->
+    <a href="https://youtube.com/@waqar_qurious" target="_blank" class="floating-youtube" aria-label="Watch on YouTube">
+        <i class="fab fa-youtube"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
