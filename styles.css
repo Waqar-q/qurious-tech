@@ -117,9 +117,11 @@ button {
     transition: var(--transition);
 }
 .logo-image {
-    height: 70px;
+    height: 90px;
     width: auto;
     object-fit: contain;
+    display: block;
+   
 }
 
 .logo:hover {
@@ -130,7 +132,7 @@ button {
     font-size: 1.8rem;
 }
 .navbar.scrolled .logo-image {
-    height: 65px;
+    height: 85px;
 }
 .nav-menu {
     display: flex;
