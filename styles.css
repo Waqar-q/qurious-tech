@@ -115,12 +115,13 @@ button {
     font-size: 1.5rem;
     font-weight: 700;
     transition: var(--transition);
+    margin-top: 20px;
 }
 .logo-image {
     height: 90px;
     width: auto;
     object-fit: contain;
-    display: block;
+   margin-top: 10px;
    
 }
 
