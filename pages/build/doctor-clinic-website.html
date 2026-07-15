@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor / Clinic Website — Qurious Tech</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="../../index.html" class="logo">Qurious<span class="logo-accent">Tech</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../index.html#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-nav pulse-btn">Get a Free Quote</a>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero" id="hero">
+    <div class="bg-mesh">
+      <div class="mesh-blob" style="background:#10b981;opacity:0.15;"></div>
+      <div class="mesh-blob" style="background:#06b6d4;opacity:0.12;"></div>
+      <div class="mesh-blob" style="background:#3b82f6;opacity:0.08;"></div>
+    </div>
+    <div class="bg-noise"></div>
+
+    <i class="fas fa-heartbeat hero-floater flt-float" style="top:20%;right:8%;font-size:1.6rem;opacity:0.18;color:#10b981;"></i>
+    <i class="fas fa-stethoscope hero-floater flt-float-2" style="top:50%;left:4%;font-size:1.4rem;opacity:0.12;color:#06b6d4;"></i>
+    <i class="fas fa-calendar-check hero-floater flt-float-3" style="bottom:30%;right:12%;font-size:1.3rem;opacity:0.12;color:#3b82f6;"></i>
+    <i class="fas fa-user-md hero-floater flt-float" style="bottom:45%;left:14%;font-size:1rem;opacity:0.1;"></i>
+
+    <!-- Heartbeat line -->
+    <svg class="heartbeat-line" style="position:absolute;bottom:0;left:0;width:100%;height:50px;opacity:0.08;" viewBox="0 0 400 50" preserveAspectRatio="none">
+      <polyline points="0,25 40,25 50,25 60,5 70,45 80,25 90,25 120,25 130,25 140,8 150,42 160,25 170,25 200,25 210,25 220,5 230,45 240,25 250,25 280,25 290,25 300,10 310,40 320,25 330,25 400,25" stroke="#10b981" stroke-width="2" fill="none"/>
+    </svg>
+
+    <div class="container hero-inner hero-centered">
+      <div class="hero-text">
+        <span class="hero-badge">✦ Qurious Tech</span>
+        <h1 class="hero-title">Patients Search for You Online. <span class="gradient-text">Make Sure They Find You.</span></h1>
+        <p class="hero-subtitle">A professional clinic website with online appointments, Google Maps, and patient forms. Starting at ₹5,999.</p>
+        <div class="page-hero-cta">
+          <a href="#contact" class="btn btn-primary btn-lg pulse-btn">Get More Patients <i class="fas fa-stethoscope"></i></a>
+          <a href="https://wa.me/918827327100?text=Hi!%20I%20want%20a%20website%20for%20my%20clinic..." target="_blank" class="btn btn-secondary btn-lg"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
+        <div class="hero-badges">
+          <span><i class="fas fa-check-circle"></i> Online Appointment Booking</span>
+          <span><i class="fas fa-check-circle"></i> Google Maps Integration</span>
+          <span><i class="fas fa-check-circle"></i> Patient Portal Ready</span>
+        </div>
+        <div class="hero-risk-tag">
+          <i class="fas fa-shield-alt"></i> Free Google My Business setup &bull; WhatsApp reminders &bull; ₹5,999 starting
+        </div>
+      </div>
+      <div class="hero-showcase" style="display:flex;gap:16px;justify-content:center;">
+        <div style="width:100px;height:130px;border-radius:12px;border:1px solid rgba(16,185,129,0.2);overflow:hidden;">
+          <div style="height:10px;background:#10b981;"></div>
+          <div style="padding:10px;text-align:center;">
+            <div style="font-size:0.55rem;color:var(--text-muted);margin-bottom:6px;">MON</div>
+            <div style="font-size:1rem;font-weight:600;color:#10b981;">12</div>
+            <div style="font-size:0.5rem;color:var(--text-muted);margin-top:4px;">Appts Available</div>
+          </div>
+        </div>
+        <div style="width:100px;height:130px;border-radius:12px;border:1px solid rgba(6,182,212,0.2);overflow:hidden;">
+          <div style="height:10px;background:#06b6d4;"></div>
+          <div style="padding:10px;text-align:center;">
+            <div style="font-size:0.55rem;color:var(--text-muted);margin-bottom:6px;">TUE</div>
+            <div style="font-size:1rem;font-weight:600;color:#06b6d4;">18</div>
+            <div style="font-size:0.5rem;color:var(--text-muted);margin-top:4px;">Appts Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="problem-section section-spacing">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="problem-content">
+          <h2>Patients Can't Find Your Clinic Online? You're Losing Them</h2>
+          <p>When someone searches for a doctor or clinic near them, they check Google and websites. If you don't have an online presence, they'll book with someone else. A clinic website builds trust and brings in new patients.</p>
+          <ul class="problem-list">
+            <li><i class="fas fa-times-circle"></i> No online patient leads — relying only on walk-ins</li>
+            <li><i class="fas fa-times-circle"></i> Patients can't find your clinic on Google</li>
+            <li><i class="fas fa-times-circle"></i> No way for patients to book appointments online</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="problem-list">
+            <li><i class="fas fa-check-circle" style="color:#10b981"></i> Services & treatments listed clearly</li>
+            <li><i class="fas fa-check-circle" style="color:#10b981"></i> Appointment booking form — get leads 24/7</li>
+            <li><i class="fas fa-check-circle" style="color:#10b981"></i> Clinic timings & location with Google Maps</li>
+            <li><i class="fas fa-check-circle" style="color:#10b981"></i> WhatsApp for patient inquiries</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-section section-spacing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">3 Simple Steps</h2>
+        <p class="section-desc">Getting started is easier than you think.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Tell Us What You Need</h3>
+          <p>Fill out the form or WhatsApp us. We'll discuss your requirements within 30 minutes.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>We Build & Deliver</h3>
+          <p>Our team gets to work. You'll get updates at every stage until it's ready.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>You Launch & Grow</h3>
+          <p>We hand over everything and make sure you're happy. Then you start seeing results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section section-spacing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Simple & Transparent</h2>
+        <p class="section-desc">No hidden fees. Pay only for what you need.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h4>Basic</h4>
+          <div class="pricing-price">₹5,999 <span>starting</span></div>
+          <p class="pricing-desc">A simple clinic website with essential patient info</p>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Clinic info & services</li>
+            <li><i class="fas fa-check"></i> Timings & location</li>
+            <li><i class="fas fa-check"></i> Contact form & WhatsApp</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="pricing-card featured">
+          <span class="pricing-badge">Most Popular</span>
+          <h4>Standard</h4>
+          <div class="pricing-price">₹9,999 <span>starting</span></div>
+          <p class="pricing-desc">Full clinic website with appointment booking</p>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> All Basic features</li>
+            <li><i class="fas fa-check"></i> Appointment booking form</li>
+            <li><i class="fas fa-check"></i> Doctor profiles & qualifications</li>
+            <li><i class="fas fa-check"></i> Google Maps & WhatsApp integration</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <h4>Premium</h4>
+          <div class="pricing-price">₹16,999 <span>starting</span></div>
+          <p class="pricing-desc">Complete clinic portal with patient management</p>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> All Standard features</li>
+            <li><i class="fas fa-check"></i> Online consultation booking</li>
+            <li><i class="fas fa-check"></i> Patient review/testimonial section</li>
+            <li><i class="fas fa-check"></i> Blog / health tips section</li>
+            <li><i class="fas fa-check"></i> 1 year hosting & domain assistance</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <section class="stats-section section-spacing hero-stats">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">By the Numbers</span>
+        <h2 class="section-title">Results That Speak</h2>
+        <p class="section-desc">Real numbers from real projects delivered to Indian businesses.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-count="50" data-suffix="+">0</div>
+          <p class="stat-label">Websites Launched</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="48" data-suffix="+">0</div>
+          <p class="stat-label">Happy Clients</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="98" data-suffix="%">0</div>
+          <p class="stat-label">Satisfaction Rate</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="3" data-suffix=" Days">0</div>
+          <p class="stat-label">Avg. Delivery</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample -->
+  <section class="sample-section section-spacing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Work</span>
+        <h2 class="section-title">What You Can Expect</h2>
+      </div>
+      <div class="sample-card">
+        <div class="device-wrapper">
+          <div class="device-phone">
+            <div class="device-phone-notch"></div>
+            <div class="device-screen" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+              <i class="fas fa-user-md"></i>
+            </div>
+          </div>
+        </div>
+        <div class="sample-info">
+          <h3>Swasthya Clinic — Dr. Sharma's Dental Clinic</h3>
+          <p>A professional dental clinic website featuring services (root canal, whitening, implants), doctor profiles, clinic timings, location with Google Maps, and an appointment booking form. Now getting 20+ appointment requests per week online.</p>
+          <div class="sample-tags">
+            <span>Dental Clinic</span>
+            <span>Appointment Booking</span>
+            <span>Patient Leads</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials section-spacing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Trusted by Businesses Like Yours</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"I was surprised how many new patients found me through my website. The appointment booking form saves so much time. My clinic now runs more smoothly and I see new faces every week."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: #667eea;">S</div>
+            <div>
+              <h4>Dr. Anil Sharma</h4>
+              <span>Swasthya Clinic, Indore</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"We got our clinic website done and within a month we started getting appointment inquiries from Google. The team made the whole process effortless. Highly recommend."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: #f5576c;">D</div>
+            <div>
+              <h4>Dr. Neha Gupta</h4>
+              <span>Gupta Eye Care, Indore</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section section-spacing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FAQs</span>
+        <h2 class="section-title">Common Questions</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item open">
+          <button class="faq-question">How long does it take to build a clinic website? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Most clinic websites go live in 3-5 days. If you need appointment booking and patient forms, it may take up to a week. We give you a clear timeline upfront.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How much does it cost? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Clinic websites start at ₹5,999. Pricing depends on the number of pages and features like appointment booking, doctor profiles, etc.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I update timings and services myself? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Absolutely. We provide an easy dashboard where you can update timings, services, doctor info, and respond to appointment inquiries anytime.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What if I don't like it? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>We offer unlimited revisions. We'll work with you until the website reflects your clinic's professional image perfectly.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How do I pay? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>UPI, bank transfer, and cards accepted. 50% advance, 50% on completion. EMI options available if needed.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="page-contact section-spacing" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get Started</span>
+        <h2 class="section-title">Ready to Get Started?</h2>
+        <p class="section-desc">Fill out the form and we'll get back to you within 24 hours.</p>
+      </div>
+      <form class="page-contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="New Inquiry: Doctor/Clinic Website - Qurious Tech" />
+        <input type="hidden" name="from_name" value="Qurious Tech Website" />
+        <input type="hidden" name="service" value="Doctor/Clinic Website" />
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your Name *" required />
+          <input type="email" name="email" placeholder="Your Email *" required />
+        </div>
+        <div class="form-row">
+          <input type="tel" name="phone" placeholder="Phone Number" required />
+          <input type="text" name="whatsapp" placeholder="WhatsApp Number (same or different)" />
+        </div>
+        <textarea name="message" rows="4" placeholder="Tell us about your project, goals, and timeline... *" required></textarea>
+        <button type="submit" class="btn btn-primary btn-submit btn-lg pulse-btn">
+          Send &amp; Get Free Quote <i class="fas fa-paper-plane"></i>
+        </button>
+        <p class="form-note"><i class="fas fa-lock"></i> Your info is safe — we'll never spam you.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="../../index.html" class="logo">Qurious<span class="logo-accent">Tech</span></a>
+          <p>Powering businesses with custom websites, smart automation, and creative branding.</p>
+          <a href="#contact" class="btn btn-primary pulse-btn footer-cta-btn">Get a Free Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="footer-links">
+          <h4>Build</h4>
+          <ul>
+            <li><a href="business-website.html">Business Website</a></li>
+            <li><a href="ecommerce.html">E-Commerce Store</a></li>
+            <li><a href="landing-page.html">Landing Page</a></li>
+            <li><a href="real-estate-website.html">Real Estate Website</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Create</h4>
+          <ul>
+            <li><a href="../create/ai-reels.html">AI Reels / Shorts</a></li>
+            <li><a href="../create/reel-editing.html">Reel Editing</a></li>
+            <li><a href="../create/youtube-video-editing.html">YouTube Video Editing</a></li>
+            <li><a href="../create/social-media-management.html">Social Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Automate</h4>
+          <ul>
+            <li><a href="../automate/whatsapp-chatbot.html">WhatsApp Chatbot</a></li>
+            <li><a href="../automate/whatsapp-bulk-messaging.html">WhatsApp Bulk Messaging</a></li>
+            <li><a href="../automate/lead-generation.html">Lead Generation</a></li>
+            <li><a href="../automate/crm-setup.html">CRM &amp; Billing</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Design</h4>
+          <ul>
+            <li><a href="../design/logo-design.html">Logo Design</a></li>
+            <li><a href="../design/social-media-posts.html">Social Posts</a></li>
+            <li><a href="../design/business-card-brochure.html">Card &amp; Brochure</a></li>
+            <li><a href="../design/ad-creatives.html">Ad Creatives</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Qurious Tech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <div class="floating-cta">
+    <a href="https://wa.me/918827327100" target="_blank" class="floating-btn whatsapp-btn" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#contact" class="floating-btn quote-btn" aria-label="Get a Free Quote">
+      <i class="fas fa-paper-plane"></i>
+    </a>
+  </div>
+
+  <script src="../../script.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+    const form = document.querySelector('.page-contact-form');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('.btn-submit');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+        btn.disabled = true;
+        try {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, { method: 'POST', body: formData });
+          if (response.ok) {
+            btn.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            form.reset();
+            setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 4000);
+          } else throw new Error('Failed');
+        } catch {
+          btn.innerHTML = 'Failed. Try again? <i class="fas fa-exclamation-circle"></i>';
+          btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+          setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 4000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
