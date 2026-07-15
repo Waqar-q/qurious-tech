@@ -253,10 +253,13 @@ img {
   z-index: 0;
 }
 
-.hero-bg canvas {
+.hero-bg-img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
   display: block;
+  opacity: 0.85;
 }
 
 .hero-container {
