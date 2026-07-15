@@ -87,14 +87,18 @@ img {
   letter-spacing: -0.5px;
   display: inline-flex;
   align-items: center;
-  gap: 13px;
+  gap: 6px;
 }
 
 .logo-img {
-  height: 52px;
+  height: 65px;
   width: auto;
   display: block;
   margin-top: 5px;
+}
+
+.logo-text {
+  transform: translateY(-5px);
 }
 
 .logo-accent {
