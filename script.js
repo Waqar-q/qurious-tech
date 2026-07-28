@@ -1,265 +1,360 @@
-// ========== NAVBAR SCROLL ==========
-const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+const launchSolutions = {
+  business: {
+    chip: "Service business / startup",
+    title: "Business Launch",
+    eyebrow: "For startups, SMEs, and service businesses",
+    description: "Everything needed to show up with confidence from your first customer conversation.",
+    points: ["Brand identity", "Business-ready assets", "Digital handover"],
+    planPrefix: "Business Launch"
+  },
+  local: {
+    chip: "Local business",
+    title: "Local Business Launch",
+    eyebrow: "For shops, clinics, restaurants, and salons",
+    description: "A credible, customer-ready foundation for businesses that win trust close to home.",
+    points: ["Professional presence", "Reusable customer assets", "Clear handover"],
+    planPrefix: "Local Business Launch"
+  },
+  ecommerce: {
+    chip: "E-commerce brand",
+    title: "E-commerce Launch",
+    eyebrow: "For online stores and D2C brands",
+    description: "A brand and digital foundation designed for a store that needs to look ready to sell.",
+    points: ["Store-ready brand system", "Customer-facing assets", "Digital source files"],
+    planPrefix: "E-commerce Launch"
+  },
+  creator: {
+    chip: "Creator",
+    title: "Creator Launch",
+    eyebrow: "For creators, YouTubers, and influencers",
+    description: "Build the visual system and reusable assets that make your work recognisably yours.",
+    points: ["Signature brand system", "Channel-ready assets", "Editable templates"],
+    planPrefix: "Creator Launch"
+  },
+  personal: {
+    chip: "Personal brand",
+    title: "Personal Brand Launch",
+    eyebrow: "For coaches, consultants, and speakers",
+    description: "A professional presence that makes your expertise easier to recognise and remember.",
+    points: ["Authority-led identity", "Business collateral", "Documented handover"],
+    planPrefix: "Personal Brand Launch"
+  },
+  corporate: {
+    chip: "Corporate rebrand",
+    title: "Corporate Rebranding",
+    eyebrow: "For established businesses",
+    description: "Bring a scattered business presence into one clear, consistent, professional system.",
+    points: ["Refined identity", "Consistent collateral", "Brand documentation"],
+    planPrefix: "Corporate Rebranding"
+  },
+  website: {
+    chip: "Website & apps",
+    title: "Website & App Development",
+    eyebrow: "For businesses needing a website or app",
+    description: "Build the digital foundation, documented files, and handover needed for the next version of your business.",
+    points: ["Digital foundation", "Source files & backup", "Training at higher tiers"],
+    planPrefix: "Website & App Development"
+  },
+  automation: {
+    chip: "AI automation",
+    title: "AI Automation Setup",
+    eyebrow: "For businesses ready to automate",
+    description: "Move toward clearer systems with project documentation, handover, and growth-ready guidance.",
+    points: ["Clearer workflows", "Documented setup", "System guidance"],
+    planPrefix: "AI Automation Setup"
   }
-  updateActiveLink();
-});
-
-// ========== MOBILE MENU ==========
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('open');
-});
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navLinks.classList.remove('open');
-  });
-});
-
-// ========== ACTIVE NAV LINK ==========
-function updateActiveLink() {
-  const sections = document.querySelectorAll('section[id]');
-  const scrollPos = window.scrollY + 120;
-
-  sections.forEach(section => {
-    const top = section.offsetTop;
-    const height = section.offsetHeight;
-    const id = section.getAttribute('id');
-
-    if (scrollPos >= top && scrollPos < top + height) {
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${id}`) {
-          link.classList.add('active');
-        }
-      });
-    }
-  });
-}
-
-// ========== COUNTER ANIMATION ==========
-function animateCounter(el) {
-  const target = parseInt(el.getAttribute('data-count'));
-  const suffix = el.getAttribute('data-suffix') || '+';
-  const duration = 2000;
-  const start = performance.now();
-
-  function update(currentTime) {
-    const elapsed = currentTime - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(eased * target);
-    el.textContent = current.toLocaleString('en-IN') + suffix;
-
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    } else {
-      el.textContent = target.toLocaleString('en-IN') + suffix;
-    }
-  }
-
-  requestAnimationFrame(update);
-}
-
-// ========== SCROLL REVEAL ==========
-const observerOptions = {
-  threshold: 0.15,
-  rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+const planDefinitions = [
+  {
+    tier: "Foundation",
+    price: "₹5,999",
+    timeline: "7–10 days",
+    revisions: "2 revisions",
+    description: "Get credible and launch-ready with the core brand, business, and digital handover assets.",
+    features: [
+      "Logo suite, favicon, palette, typography & brand guidelines",
+      "Business card, letterhead, email signature, profile & cover assets",
+      "Canva editable templates and PNG export templates",
+      "Website source files, backup, assets, sitemap & robots.txt",
+      "Project handover, user manual & credentials where managed"
+    ]
+  },
+  {
+    tier: "Professional",
+    price: "₹11,999",
+    timeline: "10–14 days",
+    revisions: "4 revisions",
+    featured: true,
+    description: "A more complete launch setup for businesses that need presentation, measurement, and training built in.",
+    features: [
+      "Everything in Foundation",
+      "Editable AI and PSD source files",
+      "Company profile and brochure",
+      "Analytics setup report and SEO report",
+      "Training recording for a smoother handover"
+    ]
+  },
+  {
+    tier: "Scale",
+    price: "₹21,999",
+    timeline: "14–21 days",
+    revisions: "Unlimited revisions",
+    description: "Build a more documented, growth-ready foundation with systems and maintenance guidance included.",
+    features: [
+      "Everything in Professional",
+      "Database backup and CRM documentation",
+      "Automation guide and SOP document",
+      "Brand asset library",
+      "Maintenance guide for what comes next"
+    ]
+  }
+];
 
-      // Trigger counter if stat numbers are in view
-      if (entry.target.classList.contains('hero-stats')) {
-        document.querySelectorAll('.stat-number').forEach(el => {
-          if (!el.dataset.animated) {
-            el.dataset.animated = 'true';
-            animateCounter(el);
-          }
-        });
-      }
+const comparisonRows = [
+  ["Core brand system & business assets", "Included", "Included", "Included"],
+  ["Canva templates, asset files & project handover", "Included", "Included", "Included"],
+  ["Editable AI / PSD source files", "—", "Included", "Included"],
+  ["Company profile & brochure", "—", "Included", "Included"],
+  ["Analytics, SEO report & training recording", "—", "Included", "Included"],
+  ["Database backup & CRM documentation", "—", "—", "Included"],
+  ["Automation guide, SOP & asset library", "—", "—", "Included"],
+  ["Revisions / delivery", "2 · 7–10 days", "4 · 10–14 days", "Unlimited · 14–21 days"]
+];
 
-      observer.unobserve(entry.target);
-    }
+const growthBundles = [
+  ["Local Business Growth Bundle", "₹14,999", "For local businesses that need a consistent monthly growth rhythm.", "local"],
+  ["Creator Growth Bundle", "₹14,999", "For creators building a more consistent content and reporting routine.", "creator"],
+  ["Business Growth Bundle", "₹19,999", "For SMEs that want one integrated monthly growth partnership.", "business"],
+  ["Personal Brand Growth Bundle", "₹19,999", "For professionals building visibility around their expertise.", "personal"],
+  ["E-commerce Growth Bundle", "₹24,999", "For e-commerce brands ready for a more complete monthly growth system.", "ecommerce"]
+];
+
+const services = [
+  { name: "Social Media Management", price: "₹9,999", group: "Visibility" },
+  { name: "SEO", price: "₹9,999", group: "Visibility" },
+  { name: "Google Business Management", price: "₹2,999", group: "Visibility" },
+  { name: "Content Writing", price: "₹4,999", group: "Visibility" },
+  { name: "Graphic Design", price: "₹5,999", group: "Creative production" },
+  { name: "Reel Editing", price: "₹6,999", group: "Creative production" },
+  { name: "Video Editing", price: "₹9,999", group: "Creative production" },
+  { name: "Email Marketing", price: "₹4,999", group: "Retention" },
+  { name: "WhatsApp Marketing", price: "₹3,999", group: "Retention" },
+  { name: "Website Care", price: "₹2,999", group: "Technical continuity" },
+  { name: "Development Support", price: "₹4,999", group: "Technical continuity" },
+  { name: "AI Automation Care", price: "₹7,999", group: "Technical continuity" }
+];
+
+let selectedSolutionKey = "business";
+let selectedServiceGroup = "All";
+
+const byId = (id) => document.getElementById(id);
+
+function buildSectors() {
+  const picker = byId("sectorPicker");
+  picker.innerHTML = Object.entries(launchSolutions).map(([key, solution]) =>
+    `<button class="sector-chip ${key === selectedSolutionKey ? "active" : ""}" role="tab" aria-selected="${key === selectedSolutionKey}" type="button" data-solution="${key}">${solution.chip}</button>`
+  ).join("");
+
+  picker.querySelectorAll("[data-solution]").forEach(button => {
+    button.addEventListener("click", () => selectSolution(button.dataset.solution, true));
   });
-}, observerOptions);
+}
 
-// Observe sections and key elements
-document.querySelectorAll('section, .hero-stats, .services-grid, .portfolio-grid, .testimonials-grid').forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
+function buildPlans() {
+  const solution = launchSolutions[selectedSolutionKey];
+  byId("selectedEyebrow").textContent = solution.eyebrow;
+  byId("selectedTitle").textContent = solution.title;
+  byId("selectedDescription").textContent = solution.description;
+  byId("selectedPrice").textContent = planDefinitions[0].price;
+  byId("solutionPoints").innerHTML = solution.points.map(point => `<span>${point}</span>`).join("");
+  byId("plansHeading").textContent = `${solution.title} plans`;
+  byId("plansIntro").textContent = `Pick the level of readiness you need for your ${solution.title.toLowerCase()}. Every plan includes a defined handover, so you always know what comes next.`;
 
-// Also observe individual cards for staggered animation
-document.querySelectorAll('.service-category, .service-broad, .service-cta, .portfolio-item, .testimonial-card').forEach((el, i) => {
-  el.style.transitionDelay = `${i * 0.1}s`;
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
+  byId("planGrid").innerHTML = planDefinitions.map((plan, index) => `
+    <article class="plan-card ${plan.featured ? "featured" : ""}">
+      <span class="tier-number">0${index + 1} / ${plan.tier}</span>
+      <h3>${plan.tier}</h3>
+      <p class="plan-description">${plan.description}</p>
+      <div class="price-block"><strong>${plan.price}</strong><small>One-time introductory launch price</small></div>
+      <div class="plan-meta"><span><i></i>${plan.timeline}</span><span><i></i>${plan.revisions}</span></div>
+      <span class="inclusion-label">What it brings together</span>
+      <ul class="plan-features">${plan.features.map(feature => `<li>${feature}</li>`).join("")}</ul>
+      <button class="button" type="button" data-plan="${solution.planPrefix} — ${plan.tier}">${plan.featured ? "Start with Professional" : `Choose ${plan.tier}`} <span aria-hidden="true">→</span></button>
+    </article>
+  `).join("");
 
-// ========== CONTACT FORM ==========
-const contactForm = document.getElementById('contactForm');
+  byId("comparisonBody").innerHTML = comparisonRows.map(row =>
+    `<tr>${row.map(cell => `<td>${cell}</td>`).join("")}</tr>`
+  ).join("");
 
-contactForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = contactForm.querySelector('.btn-submit');
-  const originalText = btn.innerHTML;
-  btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-  btn.disabled = true;
+  byId("planGrid").querySelectorAll("[data-plan]").forEach(button => {
+    button.addEventListener("click", () => selectPlan(button.dataset.plan));
+  });
+}
 
-  try {
-    const formData = new FormData(contactForm);
-    const response = await fetch(contactForm.action, {
-      method: 'POST',
-      body: formData
+function selectSolution(key, shouldScroll) {
+  selectedSolutionKey = key;
+  buildSectors();
+  buildPlans();
+  if (shouldScroll) byId("plans").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function selectPlan(plan) {
+  const formPlan = byId("formPlan");
+  formPlan.value = plan;
+  byId("formContext").textContent = plan;
+  byId("formService").value = "Launch or rebrand";
+  byId("request").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function setupIntentRouter() {
+  const output = byId("intentOutput");
+  const messages = {
+    launch: `Choose your business type below and see its three launch plans. <a href="#launch">Explore launch paths →</a>`,
+    growth: `Choose one integrated monthly bundle first, then add a focused service only if you need it. <a href="#growth">See growth bundles →</a>`,
+    systems: `Start with the Website & App or AI Automation route, then choose the level of documentation and handover you need. <a href="#launch">See system routes →</a>`
+  };
+  function setIntent(intent) {
+    output.innerHTML = messages[intent];
+    document.querySelectorAll(".intent-card").forEach(card => card.classList.toggle("active", card.dataset.intent === intent));
+  }
+  setIntent("launch");
+  document.querySelectorAll(".intent-card").forEach(card => card.addEventListener("click", () => setIntent(card.dataset.intent)));
+}
+
+function buildGrowth() {
+  byId("growthGrid").innerHTML = growthBundles.map(([name, price, description, key]) => `
+    <article class="growth-card">
+      <span class="tier-number">MONTHLY / ${launchSolutions[key].chip}</span>
+      <h3>${name}</h3>
+      <p>${description}</p>
+      <strong>${price}</strong><small>starting monthly</small>
+      <a href="#request" data-growth="${name}">Discuss this bundle →</a>
+    </article>
+  `).join("");
+  byId("growthGrid").querySelectorAll("[data-growth]").forEach(link => {
+    link.addEventListener("click", () => {
+      byId("formPlan").value = link.dataset.growth;
+      byId("formContext").textContent = link.dataset.growth;
+      byId("formService").value = "Monthly growth";
     });
-
-    if (response.ok) {
-      btn.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
-      btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-      contactForm.reset();
-
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 4000);
-    } else {
-      throw new Error('Submission failed');
-    }
-  } catch (err) {
-    btn.innerHTML = 'Failed to send. Try again? <i class="fas fa-exclamation-circle"></i>';
-    btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
-
-    setTimeout(() => {
-      btn.innerHTML = originalText;
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 4000);
-  }
-});
-
-// ========== CURSOR SPOTLIGHT (Landing Page hero) ==========
-const spotlightBg = document.querySelector('.bg-spotlight');
-if (spotlightBg) {
-  document.addEventListener('mousemove', (e) => {
-    const rect = spotlightBg.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    spotlightBg.style.setProperty('--spot-x', x + '%');
-    spotlightBg.style.setProperty('--spot-y', y + '%');
-    const spot = spotlightBg.querySelector('::before');
-    if (spot) {
-      spotlightBg.style.setProperty('--spot-x', x + '%');
-      spotlightBg.style.setProperty('--spot-y', y + '%');
-    }
-    spotlightBg.querySelector('*')?.style?.setProperty?.('transform', `translate(${x - 50}%, ${y - 50}%)`);
   });
-  // Update the pseudo element position via a style element
-  const spotStyle = document.createElement('style');
-  spotStyle.textContent = `
-    .bg-spotlight::before {
-      left: var(--spot-x, 50%);
-      top: var(--spot-y, 50%);
-    }
-  `;
-  document.head.appendChild(spotStyle);
 }
 
-// ========== 3D CARD TILT (showcase-card3d) ==========
-document.querySelectorAll('.showcase-card3d').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    const tiltX = (y - 0.5) * 20;
-    const tiltY = (x - 0.5) * -20;
-    card.style.transform = `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+function buildServices() {
+  const groups = ["All", ...new Set(services.map(service => service.group))];
+  byId("serviceFilters").innerHTML = groups.map(group =>
+    `<button type="button" class="filter-button ${group === selectedServiceGroup ? "active" : ""}" data-group="${group}">${group}</button>`
+  ).join("");
+  byId("serviceFilters").querySelectorAll("[data-group]").forEach(button => {
+    button.addEventListener("click", () => {
+      selectedServiceGroup = button.dataset.group;
+      buildServices();
+    });
   });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg)';
+  const visibleServices = selectedServiceGroup === "All" ? services : services.filter(service => service.group === selectedServiceGroup);
+  byId("serviceGrid").innerHTML = visibleServices.map(service => `
+    <article class="service-card">
+      <span class="service-group">${service.group}</span>
+      <h3>${service.name}</h3>
+      <p>Ongoing support with monthly reporting, final assets, editable files where applicable, and project handover notes.</p>
+      <footer><div><strong>${service.price}</strong><br /><small>starting monthly</small></div><a href="#request" data-service="${service.name}">Request →</a></footer>
+    </article>
+  `).join("");
+  byId("serviceGrid").querySelectorAll("[data-service]").forEach(link => {
+    link.addEventListener("click", () => {
+      byId("formPlan").value = link.dataset.service;
+      byId("formContext").textContent = link.dataset.service;
+      byId("formService").value = "A specific service";
+    });
   });
-});
-
-// ========== TYPEWRITER EFFECT ==========
-function typewriter(el, text, speed = 50) {
-  let i = 0;
-  el.textContent = '';
-  el.style.visibility = 'visible';
-  function type() {
-    if (i < text.length) {
-      el.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-    }
-  }
-  type();
 }
 
-document.querySelectorAll('[data-typewriter]').forEach(el => {
-  const text = el.textContent.trim();
-  el.textContent = '';
-  const observer = new IntersectionObserver((entries) => {
+function setupMenu() {
+  const toggle = byId("menuToggle");
+  const nav = byId("navLinks");
+  toggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+  nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+  }));
+  window.addEventListener("scroll", () => byId("siteHeader").classList.toggle("scrolled", window.scrollY > 14), { passive: true });
+}
+
+function setupComparison() {
+  const button = byId("compareButton");
+  const comparison = byId("comparison");
+  button.addEventListener("click", () => {
+    const opening = comparison.hidden;
+    comparison.hidden = !opening;
+    button.setAttribute("aria-expanded", String(opening));
+    if (opening) comparison.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+}
+
+function setupForm() {
+  const form = byId("requestForm");
+  const status = byId("formStatus");
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const button = form.querySelector("button[type=submit]");
+    const formData = new FormData(form);
+    const accessKey = formData.get("access_key");
+    button.disabled = true;
+    button.innerHTML = "Sending request…";
+    status.textContent = "";
+    status.className = "form-status";
+    if (accessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
+      const message = `Hi Qurious Tech, my name is ${formData.get("name")}. I am interested in: ${formData.get("selected_plan") || formData.get("service")}. Business: ${formData.get("business")}. Details: ${formData.get("message") || "Not provided"}`;
+      window.open(`https://wa.me/918827327100?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+      status.textContent = "WhatsApp has opened with your request ready to send.";
+      status.classList.add("success");
+      button.innerHTML = "Request ready on WhatsApp →";
+      button.disabled = false;
+      return;
+    }
+    try {
+      const response = await fetch(form.action, { method: "POST", body: formData });
+      if (!response.ok) throw new Error("Request failed");
+      form.reset();
+      status.textContent = "Request sent. We will be in touch soon.";
+      status.classList.add("success");
+      button.innerHTML = "Request sent ✓";
+    } catch {
+      status.textContent = "Could not send online. Please use WhatsApp or call us instead.";
+      status.classList.add("error");
+      button.innerHTML = "Try again";
+      button.disabled = false;
+    }
+  });
+}
+
+function setupReveals() {
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        typewriter(el, text, 40);
-        observer.unobserve(el);
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
-  observer.observe(el);
-});
-
-// ========== HERO PARALLAX ==========
-const heroParallax = document.querySelector('.page-hero');
-if (heroParallax) {
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const heroBg = heroParallax.querySelector('.bg-mesh, .bg-split, .bg-spotlight');
-    if (heroBg && scrolled < heroParallax.offsetHeight) {
-      heroBg.style.transform = `translateY(${scrolled * 0.15}px)`;
-    }
+  }, { threshold: .12 });
+  document.querySelectorAll(".section, .hero-panel").forEach(element => {
+    element.classList.add("reveal");
+    observer.observe(element);
   });
+  document.querySelector(".hero")?.classList.add("visible");
 }
 
-// ========== VIDEO AUTOPLAY ON SCROLL ==========
-const videoObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const video = entry.target.querySelector('video');
-    if (!video) return;
-    if (entry.isIntersecting) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
-  });
-}, { threshold: 0.3 });
-
-document.querySelectorAll('.video-card').forEach(el => {
-  videoObserver.observe(el);
-});
-
-// ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
+buildSectors();
+buildPlans();
+buildGrowth();
+buildServices();
+setupIntentRouter();
+setupMenu();
+setupComparison();
+setupForm();
+setupReveals();
