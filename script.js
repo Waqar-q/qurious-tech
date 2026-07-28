@@ -219,8 +219,16 @@ function setupIntentRouter() {
     output.innerHTML = messages[intent];
     document.querySelectorAll(".intent-card").forEach(card => card.classList.toggle("active", card.dataset.intent === intent));
   }
+  function scrollToIntent(intent) {
+    const target = document.querySelector(`.intent-card[data-intent="${intent}"]`)?.dataset.target;
+    const section = target ? document.querySelector(target) : null;
+    if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
   setIntent("launch");
-  document.querySelectorAll(".intent-card").forEach(card => card.addEventListener("click", () => setIntent(card.dataset.intent)));
+  document.querySelectorAll(".intent-card").forEach(card => card.addEventListener("click", () => {
+    setIntent(card.dataset.intent);
+    scrollToIntent(card.dataset.intent);
+  }));
 }
 
 function buildGrowth() {
